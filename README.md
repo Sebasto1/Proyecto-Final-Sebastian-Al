@@ -1,4 +1,4 @@
-Documentation
+Documentacion
 
 Web para la organizacion de tienda de venta de consolas con registros para Vendedores, Distribuidores y Consolas con su respectivo stock y buscador de productos.
 Cuenta con herencia de padre a hijos, registros y busqueda en la base de datos.
