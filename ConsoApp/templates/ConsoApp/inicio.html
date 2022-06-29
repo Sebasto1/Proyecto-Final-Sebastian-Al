@@ -1,0 +1,42 @@
+{% extends "ConsoApp/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <h1>Buscador</h1>
+  
+
+    <form action="/ConsoApp/buscar/" method="GET">
+
+        Buscar por nombre de producto:  <input type="text" name="nombre" id="nombre">
+
+        <input type="submit" value="Buscar">
+
+    </form>
+
+    {% if nombre %}
+
+    <ul>
+	{% for consola in consolas %}
+    <table>
+        <tr>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Stock</th>
+        </tr>
+        <tr>
+            <td align="center">{{consola.nombre}}</td>
+            <td align="center">{{consola.modelo}}</td>
+            <td align="center">{{consola.stock}}</td>
+        </tr>
+    </table>
+
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+{% endblock %}
