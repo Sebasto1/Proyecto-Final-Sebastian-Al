@@ -92,11 +92,11 @@ def distribuidores(request):
 
                   informacion = miFormulario.cleaned_data
 
-                  distribuidores = Distribuidores (empresa=informacion['nombre de la empresa'], stock=informacion['stock']) 
+                  distribuidores = Distribuidores (empresa=informacion['empresa'], ingreso=informacion['ingreso']) 
 
                   distribuidores.save()
 
-                  return render(request, "ConsoApp/vendedores.html")
+                  return render(request, "ConsoApp/distribuidores.html")
 
       else: 
 

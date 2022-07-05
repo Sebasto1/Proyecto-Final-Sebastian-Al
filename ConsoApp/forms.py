@@ -11,6 +11,5 @@ class VendedoresForm(forms.Form):
     email = forms.EmailField()
 
 class DistribuidoresForm(forms.Form):
-    nombre = forms.CharField(max_length=(20))
     empresa = forms.CharField(max_length=(20))
     ingreso = forms.IntegerField()
