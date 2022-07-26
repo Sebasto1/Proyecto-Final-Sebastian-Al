@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+  <div class="row">
+    <form action="" method="POST" class="col s6">
+      {% csrf_token %}
+      <h5>Iniciar sesión</h5>
+      <br>
+      <br>
+      {{ form.as_p }}
+      <button type="submit" class="col s6 waves-effect waves-teal btn-large teal darken-2">Enter</button>
+      <a class="col s3 darken-2" href="{% url 'password_reset' %}">Olvidé mi contraseña</a>
+      <a class="col s3 darken-2" href="{% url 'register' %}">Si no tiene usuario se puede registrar</a>
+    </form>
+  </div>
+  {% endblock %}

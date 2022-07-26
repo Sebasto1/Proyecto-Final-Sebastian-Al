@@ -1,0 +1,32 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+  <div class="row">
+    <form method="POST" class="col s6">
+      {% csrf_token %}
+      <h5>Ingresá tu mail, recordá que debe ser con el que te registraste:</h5>
+      <h7>
+      Enviaremos un correo para que restablezcas tu contraseña.
+      </h7>
+      <br>
+      <br>
+      <div class="row">
+        <div class="input-field col s8 ">
+          <input id="mail" type="text" class="validate">
+          <label for="mail">mail</label>
+        </div>
+        <div class="row">
+          <div class="input-field col s8 ">
+            <input id="mail" type="text" class="validate">
+            <label for="mail">confirmá tu mail</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s3">
+            <div class="input-field col s6"></div>
+            <a class="waves-effect waves-teal btn-large teal darken-2" href="#">Enviar</a>
+            <div class="input-field col s3"></div>
+      </div>
+    </form>      
+  </div>
+{% endblock %}

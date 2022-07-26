@@ -1,0 +1,51 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+    <body>
+
+        <div class="row my-3 p-3">
+            <h1>Perfil de {{user.username}}</h1>
+        </div>
+        <div class="row my-3 p-3">
+            <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;"/>
+        </div>
+        {% if user_form.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <div id="form_errors">
+                    {% for key, value in user_form.errors.items %}
+                        <strong>{{ value }}</strong>
+                    {% endfor %}
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+        <div class="form-content">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label class="input-field col s6 ">Usuario:</label>
+                                {{ user_form.username }}
+                            <label class="input-field col s6 ">Email:</label>
+                                {{ user_form.email }}
+                        </div>
+                        <div class="form-group">
+                            <a href="#">Change Password</a>
+                            <hr>
+                            <label class="btn amber accent-4">Cambiar avatar:{{ profile_form.avatar }}</label>
+                            
+                        </div>
+                        <label class="input-field col s6 ">Bio:</label> {{ profile_form.bio }}
+                    </div>
+                </div>
+                <br><br>
+                <button type="submit" class="waves-effect waves-teal btn-large amber accent-4">Save Changes</button>
+                <button type="reset" class="waves-effect waves-teal btn-large amber accent-4">Reset</button>
+            </form>
+        </div>
+
+    </body>
+{% endblock %}

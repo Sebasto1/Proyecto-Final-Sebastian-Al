@@ -1,0 +1,31 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+      
+        <h3>¡Hola, estás a un paso de conocer una nueva manera de trabajar!</h3>
+        <br> <br>  <br> <br> 
+        <a class="waves-effect waves-teal btn-large indigo darken-2" href="{% url 'register' %}">Comenzar</a>
+        <div class="col s5"></div>
+      </div>
+    </div>
+  </div>
+  <br> <br>  <br> <br> 
+  <div class="row">
+    <div class="col s3"> 
+      </div>
+        <div class="col s6">
+          <img src="{% static 'home/frases2.png' %}" style="position: relative;right: 100px;width: 140%;">
+        </div>
+      </div>
+  </div>
+{% endblock %}    
+    
+    
+    
+    
