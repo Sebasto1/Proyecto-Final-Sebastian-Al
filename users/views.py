@@ -22,29 +22,31 @@ def register(request):
       return render(request, "users/register.html")
 
 def login_request(request):
-
+      #capturamos el post
       if request.method == "POST":
+            #inicio esl uso del formulario de autenticación que me da Django
+            #me toma dos parámetros el request y los datos que toma del request
             form = AuthenticationForm(request, data = request.POST)
-
+            
             if form.is_valid():
                   username = form.cleaned_data.get('username')
                   password = form.cleaned_data.get('password')
-
+               
                   user = authenticate(username = username , password = password)
-
+                 
                   if user is not None:
                         login(request, user)
 
                         return render (request, "home/home.html", {"mensaje": f"Bienvenido/a {username}"})
                   else:
-
+                       
                         return render (request, "home/home.html", {"mensaje":"Error en los datos"})
             else:
                   return render(request, "home/home.html", {"mensaje":"Formulario erroneo"})
-
+      
       #al final recuperamos el form
       form = AuthenticationForm()
-
+    
       return render(request, "users/login.html", {'form': form})
 
 class RegisterViewEmployee(View):
@@ -63,7 +65,7 @@ class RegisterViewEmployee(View):
             form.save()
 
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Cuenta creada {username}, Bienvenide')
+            messages.success(request, f'cuenta creada {username}')
 
             return redirect(to='home')
 
@@ -85,7 +87,7 @@ class RegisterViewAdmin(View):
                   form.save()
 
                   username = form.cleaned_data.get('username')
-                  messages.success(request, f'Cuenta creada {username}, Bienvenide')
+                  messages.success(request, f'Cuenta creada para {username}')
 
                   return redirect(to='home')
 
