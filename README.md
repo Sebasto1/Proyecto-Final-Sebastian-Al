@@ -11,6 +11,7 @@ Cuenta con multiples apps, una de ellas para el control de usuarios, otra para l
 
 En esta app se encuentra nucleado toda la logica de registro, de inicio de sesion, perfiles y recuperacion de contraseña
 Esta app en especial lleva un modulo signals.py donde detecta que se creo un usuario y le asigna un perfil
+Usa el modulo Pillow para redimensionar las imagenes para que sean todas iguales
 
 ###App home
 ---------------
