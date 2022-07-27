@@ -1,4 +1,4 @@
-from unicodedata import name
+
 from django.shortcuts import render, redirect
 
 from users.models import User
@@ -65,9 +65,9 @@ class RegisterViewEmployee(View):
             form.save()
 
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}')
+            messages.success(request, f'Cuenta creada para {username}')
 
-            return redirect('home/home')
+            return 'home/home'
 
         return render(request, self.template_name, {'form': form})
 
@@ -89,7 +89,7 @@ class RegisterViewAdmin(View):
                   username = form.cleaned_data.get('username')
                   messages.success(request, f'Cuenta creada para {username}')
 
-                  return redirect('home/home')
+                  return 'home/home'
 
             return render(request, self.template_name, {'form': form})
 

@@ -11,6 +11,7 @@
       <br>
       <br>
       <div class="col s3"></div>
+      {% if not request.user.is_authenticated %}
       <div class="col s4">
         <a class="waves-effect waves-teal btn-large indigo darken-2"
            href="{% url 'register_employee' %}">Soy empleado</a>
@@ -19,6 +20,17 @@
         <a class="waves-effect waves-teal btn-large indigo darken-2"
            href="{% url 'register_admin' %}">Soy jefe</a>
       </div>
+      {% endif %}
+      {% if request.user.is_authenticated %}
+      <div class="col s4">
+        <a class="waves-effect waves-teal btn-large indigo darken-2"
+           href="{% url 'work_employee' %}">Soy empleado</a>
+      </div>
+      <div class="col s4">
+        <a class="waves-effect waves-teal btn-large indigo darken-2"
+           href="{% url 'work_admin' %}">Soy jefe</a>
+      </div>
+      {% endif %}
       <br>
       <br>
       <br>

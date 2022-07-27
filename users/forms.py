@@ -2,11 +2,10 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from .models import Profile, User
-from dataclasses import fields
 
 
 class RegisterForm(UserCreationForm):
-    # fields we want to include and customize in our form
+    
     first_name = forms.CharField(max_length=100,required=True, widget=forms.TextInput())
     last_name = forms.CharField(max_length=100,required=True, widget=forms.TextInput())
     username = forms.CharField(max_length=100,required=True, widget=forms.TextInput())

@@ -1,0 +1,38 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Distribuidores Lista</title>
+    </head>
+    <body>
+
+        <h1>Lista de Distribuidores</h1>
+        <ul>
+            {% for distribuidores in object_list %}
+
+                <td>
+                    <p>NOMBRE: {{ distribuidores.empresa }} </p>
+                    <p> 
+                        <a href="{% url 'Detail' distribuidores.id %}">Ver</a> 
+                        <a href="{% url 'Edit' distribuidores.id %}">Editar</a> 
+                        <a href="{% url 'Delete' distribuidores.id %}">Borrar</a> 
+                    
+                    </p> 
+                </td>
+
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'New'  %}">Nuevo</a> | 
+
+
+    </body>
+    </html>
+
+{% endblock %}
