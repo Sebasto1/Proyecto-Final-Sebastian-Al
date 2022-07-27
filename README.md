@@ -6,6 +6,8 @@ Cada usuario tiene su propio perfil donde puede cambiar su foto, su usuario y ma
 
 Cuenta con multiples apps, una de ellas para el control de usuarios, otra para la seccion de ingreso de ventas y administracion, y otra que funciona como nucleo para que los templates hereden de ellos
 
+Video descriptivo https://www.youtube.com/watch?v=98ShiD2t0a8
+
 ###App users
 ---------------
 
